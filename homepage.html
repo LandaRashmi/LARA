@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>LARA</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/aos/aos.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+
+</head>
+
+<body class="homepage">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="/static/img/logo.png" alt="">
+        <!-- <h1 class="sitename">LARA</h1> -->
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+         
+          
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>   
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <img src="static/img/law-bg.jpg" alt="" data-aos="fade-in">
+
+      <div id="hero-carousel" class="carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+        <div class="container position-relative">
+
+          <div class="carousel-item active">
+            <div class="carousel-container">
+              <p style="color: white; font-weight: bold; text-align: left; margin-left: 5px;">
+                LARA is a structured documentation system designed for legal research and AI development. It facilitates efficient data acquisition, search functionality, and resource management. By integrating advanced tools, LARA enhances accuracy, accessibility, and organization, streamlining research and development workflows for professionals and researchers.
+              </p>              
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- Featured Services Section -->
+    <section id="featured-services" class="featured-services section">
+      <div class="container">
+        <div class="row gy-5"> <!-- Increased spacing between rows -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item item-teal position-relative">
+              <div class="icon">
+                <img src="/static/img/robot.png" alt="">
+              </div>
+              <a href="{{ url_for('qlara') }}" class="stretched-link">
+                <h3>Qlara</h3>
+              </a>
+              <p>The Chatbot in LARA delivers AI-powered legal assistance, answering queries on laws, judgments, terms, and case references with speed and accuracy. It offers detailed explanations, insights, and cross-references, ensuring reliable responses for researchers and practitioners.</p>
+            </div>
+          </div> 
+
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item item-cyan position-relative">
+              <div class="icon">
+                <img src="/static/img/acts.png" alt="">
+              </div>
+              <a href="{{ url_for('acts_view') }}" class="stretched-link">
+                <h3>Acts & Sections</h3>
+              </a>
+              <p>Explore 890 acts and sections with an easy-to-use search bar. Find specific acts or provisions and view detailed information, including definitions, chapters, and footnotes. You can download sections for offline use, streamlining your legal research.</p>
+            </div>
+          </div>
+    
+          
+    
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item item-teal position-relative">
+              <div class="icon">
+                <img src="/static/img/article.png" alt="">
+              </div>
+              <a href="{{ url_for('articles_home') }}" class="stretched-link">
+                <h3>Articles</h3>
+              </a>
+              <p>The Articles section in LARA allows users to search and reference constitutional articles, providing quick access to legal provisions, interpretations, and related case laws. It includes detailed explanations, cross-references, and highlighted keywords for better navigation.</p>
+            </div>
+          </div>
+    
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item item-cyan position-relative">
+              <div class="icon">
+                <img src="/static/img/dictionary.png" alt="">
+              </div>
+              <a href="{{ url_for('words_page') }}" class="stretched-link">
+                <h3>Legal Glossary</h3>
+              </a>
+              <p>The Legal Glossary in LARA provides definitions and explanations of legal terms, ensuring clarity and understanding of complex concepts for researchers, professionals, and students. It includes references, examples, and highlighted keywords for better navigation and learning.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item item-red position-relative">
+              <div class="icon">
+                <img src="/static/img/judgement.png" alt="">
+              </div>
+              <a href="{{ url_for('judgements') }}" class="stretched-link">
+                <h3>Judgements</h3>
+              </a>
+              <p>The Judgments section in LARA allows users to search and view case judgments, providing access to legal precedents, references, and key details like plaintiff vs. defendant, judgment dates, and judge names, with highlighted keywords for easy navigation.</p>
+            </div>
+          </div>
+    
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item item-red position-relative">
+              <div class="icon">
+                <img src="/static/img/contact-form.png" alt="">
+              </div>
+              <a href="{{ url_for('forms_view') }}" class="stretched-link">
+                <h3>Templates</h3>
+              </a>             
+              <p>The Document Templates section in LARA offers a collection of preformatted legal templates for contracts, agreements, petitions, and more. It helps users draft legal documents efficiently with structured formats, editable fields, and guidelines, ensuring consistency and professionalism.</p>
+            </div>
+          </div>
+    
+         
+    
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <footer id="footer" class="footer dark-background">
+
+    <div class="container copyright text-center mt-4">
+      <!--<p>© <span>Copyright</span> <strong class="px-1 sitename">LARA</strong> <span>All Rights Reserved</span></p> -->
+    </div> 
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/php-email-form/validate.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/aos/aos.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/purecounter/purecounter_vanilla.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/waypoints/noframework.waypoints.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+
+  <!-- Main JS File -->
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+  
+
+</body>
+
+</html>

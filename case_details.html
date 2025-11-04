@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Details</title>
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #9D7952; /* Updated background color */
+            color: #fff; /* Ensuring text is readable */
+        }
+        .card {
+            font-size: 16px;
+            line-height: 1.6;
+            background: #fff;
+            border-radius: 10px;
+            color: #333;
+        }
+        .card p {
+            margin-bottom: 8px;
+        }
+        h1 {
+            font-weight: 600;
+        }
+        .btn {
+            font-weight: 500;
+        }
+        .back-btn {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background-color: #000; /* Solid black background */
+        color: #fff; /* White text */
+        transition: all 0.3s ease-in-out;
+        display: inline-flex;
+        align-items: center;
+        font-weight: bold;
+        padding: 10px 10px;
+        border-radius: 8px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+    }
+
+    .back-btn:hover {
+        background-color: #333; /* Slightly lighter black on hover */
+        transform: scale(1.05);
+        box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .back-btn:active {
+        background-color: #fff; /* Turns white when clicked */
+        color: #000; /* Text turns black */
+    }
+
+    .back-btn i {
+        margin-right: 8px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .back-btn:hover i {
+        transform: translateX(-5px);
+    }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center text-light mb-4">Case Details</h1>
+
+        {% if case %}
+            <div class="card shadow-sm p-4">
+                <p><strong>Citation:</strong> {{ case[1] }}</p>
+                <p><strong>Court:</strong> {{ case[2] }}</p>
+                <p><strong>Judge:</strong> {{ case[3] }}</p>
+                <p><strong>Case Number:</strong> {{ case[4] }}</p>
+                <p><strong>Plaintiff:</strong> {{ case[5] }}</p>
+                <p><strong>Defendant:</strong> {{ case[6] }}</p>
+                <p><strong>Date of Judgment:</strong> {{ case[7] }}</p>
+                <p><strong>Head Notes:</strong> {{ case[9] }}</p>
+                <p><strong>Judgment:</strong> {{ case[10] }}</p>
+            </div>
+        {% else %}
+            <p class="text-warning text-center mt-4">Case not found.</p>
+        {% endif %}
+        <div class="text-center mt-3">
+            <a href="javascript:history.back()" class="back-btn">
+                <i class="bi bi-arrow-left-circle"></i> Back
+            </a>
+        </div>
+        <!-- Include Bootstrap Icons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html> 

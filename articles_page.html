@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Constitution & LARA</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+    
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            border-bottom: 1px solid #331A00;
+            background-color: #331A00;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            height: 120px;
+        }
+        
+        .main {
+            margin-top: 120px;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        footer {
+            width: 100%;
+            background-color: #331A00;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            margin-top: auto;
+        }
+        
+        h1 {
+            color: #ffffff;
+            font-size: 28px;
+            margin: 20px 0 0 0;
+        }
+        
+        h2 {
+            text-align: center;
+        }
+        
+        .search-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            background-color: #f8f9fa;
+            margin: 20px auto;
+        }
+        
+        th, td {
+            border: 2px solid black;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        th {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            border: 2px solid black;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="{{ url_for('homepage') }}" class="logo">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="LARA Logo">
+        </a>
+        <nav id="navmenu" class="navmenu">
+            <ul>
+                <li>
+                    <a href="{{ url_for('homepage') }}" class="active">
+                        <i class="bi bi-house-door"></i> Home
+                    </a>
+                </li>
+            </ul>
+            <i class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="Toggle navigation"></i>
+        </nav>
+        
+    </header>
+    
+    <main class="main">
+        <div class="search-container">
+            <h3>Search India Article</h3>
+            <form action="{{ url_for('search_article') }}" method="post">
+                <label for="article_number">Enter Article Number:</label>
+                <input type="text" id="article_number" name="article_number" required>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        
+        <table>
+            <tr>
+                <th>Part</th>
+                <th>Subject Mentioned</th>
+                <th>Articles</th>
+            </tr>
+            <tr><td>Part I</td><td>Union & Its Territory</td><td>Article 1-4</td></tr>
+            <tr><td>Part II</td><td>Citizenship</td><td>Article 5-11</td></tr>
+            <tr><td>Part III</td><td>Fundamental Rights</td><td>Article 12-35</td></tr>
+            <tr><td>Part IV</td><td>Directive Principles</td><td>Article 36-51</td></tr>
+            <tr><td>Part IV A</td><td>Fundamental Duties</td><td>Article 51A</td></tr>
+            <tr><td>Part V</td><td>The Union</td><td>Article 52-151</td></tr>
+            <tr><td>Part VI</td><td>The States</td><td>Article 152-237</td></tr>
+            <tr><td>Part VII</td><td>Repealed (7th Amendment Act, 1956)</td><td>–</td></tr>
+            <tr><td>Part VIII</td><td>The Union Territories</td><td>Article 239-242</td></tr>
+            <tr><td>Part IX</td><td>The Panchayats</td><td>Article 243-243O</td></tr>
+            <tr><td>Part IX A</td><td>The Municipalities</td><td>Article 243P-243ZG</td></tr>
+            <tr><td>Part IX B</td><td>Co-operative Societies</td><td>Article 243ZH-243ZT</td></tr>
+            <tr><td>Part X</td><td>Scheduled and Tribal Areas</td><td>Article 244-244A</td></tr>
+            <tr><td>Part XI</td><td>Relation between Union & States</td><td>Article 245-263</td></tr>
+        </table>
+    </main>
+    
+    <footer id="footer" class="footer dark-background">
+
+        <div class="container copyright text-center mt-4">
+          <!--<p>© <span>Copyright</span> <strong class="px-1 sitename">LARA</strong> <span>All Rights Reserved</span></p>-->
+        </div>
+      </footer>
+</body>
+</html>
